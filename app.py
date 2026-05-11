@@ -24,7 +24,8 @@ else:
 @st.cache_resource
 def preparar_cerebro():
     # Buscamos archivos .txt en la carpeta 'data'
-    path_datos = "data/"
+   # Esta línea busca la carpeta 'data' sin importar dónde esté parada la app
+    path_datos = os.path.join(os.path.dirname(__file__), "data")
     archivos = [f for f in os.listdir(path_datos) if f.endswith('.txt')]
     
     docs = []
